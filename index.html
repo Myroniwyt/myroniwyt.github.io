@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Htet Wai Yan Oo | Data Analytics Portfolio</title>
+  <style>
+    :root {
+      --primary: #1F4E79;
+      --text: #333333;
+      --muted: #666666;
+      --bg: #FFFFFF;
+      --soft: #F5F7FA;
+      --line: #D9E2EC;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Roboto, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.15;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1F4E79, #12344D);
+      color: white;
+      padding: 72px 0 64px;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      gap: 24px;
+    }
+
+    .site-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.05;
+      margin: 0 0 12px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      margin: 0 0 24px;
+      color: #EAF2F8;
+    }
+
+    .hero-text {
+      font-size: 16px;
+      max-width: 760px;
+      margin: 0;
+      color: #F6F8FA;
+    }
+
+    section {
+      padding: 52px 0;
+    }
+
+    section:nth-child(even) {
+      background: var(--soft);
+    }
+
+    h2 {
+      font-size: 36px;
+      color: var(--primary);
+      margin: 0 0 22px;
+      line-height: 1.1;
+    }
+
+    h3 {
+      font-size: 24px;
+      color: var(--primary);
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+
+    h4 {
+      font-size: 18px;
+      color: var(--primary);
+      margin: 22px 0 8px;
+    }
+
+    p, li {
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .quick-grid,
+    .skills-grid,
+    .project-grid,
+    .contact-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .quick-grid {
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin-top: 24px;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .project-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .contact-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 3px 10px rgba(31, 78, 121, 0.06);
+    }
+
+    section:nth-child(even) .card {
+      background: white;
+    }
+
+    .label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .tools {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .placeholder {
+      border: 2px dashed #B8C7D6;
+      background: #FAFBFC;
+      border-radius: 12px;
+      padding: 26px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #12344D;
+      color: white;
+      padding: 24px 0;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      nav .container {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="site-name">Htet Wai Yan Oo</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container">
+      <h1>Htet Wai Yan Oo</h1>
+      <p class="subtitle">Computer Science Student | Data Analytics | Business Analysis</p>
+      <p class="hero-text">
+        I am a final-year Computer Science student at Rangsit University with an interest in data analytics,
+        business analysis, dashboard development, and reporting. This portfolio highlights my skills, projects,
+        resume, and learning journey in data analytics.
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2>Quick Profile</h2>
+      <div class="quick-grid">
+        <div class="card">
+          <div class="label">Education</div>
+          <div class="value">Bachelor of Computer Science, Rangsit University</div>
+        </div>
+        <div class="card">
+          <div class="label">Expected Graduation</div>
+          <div class="value">2027</div>
+        </div>
+        <div class="card">
+          <div class="label">Main Interests</div>
+          <div class="value">Data Analytics, Business Analysis, Dashboard Development, Reporting</div>
+        </div>
+        <div class="card">
+          <div class="label">Main Tools</div>
+          <div class="value">Excel, SQL/MySQL, Python/Pandas, Power BI, Jupyter Notebook</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <div class="card">
+        <h3>About Me</h3>
+        <p>
+          I am currently studying Bachelor of Computer Science in Digital Innovation Technology at Rangsit University.
+          My main interest is in data analytics, business reporting, dashboard development, and using data to support
+          decision-making.
+        </p>
+        <p>
+          I have worked on personal data analysis projects using Excel, SQL/MySQL, Python/Pandas, Power BI, and
+          Jupyter Notebook. I enjoy learning practical tools and improving my ability to turn raw data into clear insights.
+        </p>
+        <p>
+          My goal is to continue improving my technical and analytical skills while gaining real-world experience in data
+          analytics, business analysis, and reporting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="card">
+          <h4>Excel</h4>
+          <p>PivotTables, charts, dashboards, and basic business analysis.</p>
+        </div>
+        <div class="card">
+          <h4>SQL / MySQL</h4>
+          <p>Data querying, filtering, grouping, and basic database analysis.</p>
+        </div>
+        <div class="card">
+          <h4>Python / Pandas</h4>
+          <p>Data cleaning, missing value checking, data exploration, and basic charts.</p>
+        </div>
+        <div class="card">
+          <h4>Power BI</h4>
+          <p>Dashboard creation, filters, visuals, and business reporting.</p>
+        </div>
+        <div class="card">
+          <h4>Jupyter Notebook</h4>
+          <p>Data analysis documentation, Python code organization, and chart presentation.</p>
+        </div>
+        <div class="card">
+          <h4>Other Tools</h4>
+          <p>Microsoft Word, Canva, GitHub.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="card">
+          <h3>Coffee Shop Sales Analysis</h3>
+          <div class="tools">Tools Used: Excel, MySQL, Python/Pandas, Jupyter Notebook</div>
+          <p>
+            Analyzed coffee shop sales data to understand revenue trends, product performance, store location
+            performance, and hourly sales patterns.
+          </p>
+          <ul>
+            <li>Cleaned and prepared sales data.</li>
+            <li>Used MySQL queries for analysis.</li>
+            <li>Created Excel PivotTables and dashboard visuals.</li>
+            <li>Used Python/Pandas to explore data and create charts.</li>
+            <li>Presented business insights clearly.</li>
+          </ul>
+          <div class="placeholder">Add Coffee Shop dashboard screenshot here</div>
+        </div>
+
+        <div class="card">
+          <h3>Superstore Sales Dashboard</h3>
+          <div class="tools">Tools Used: Power BI, Excel</div>
+          <p>
+            Built an interactive Power BI dashboard to analyze sales, profit, category, segment, and regional performance.
+          </p>
+          <ul>
+            <li>Created dashboard visuals in Power BI.</li>
+            <li>Added filters and interactive charts.</li>
+            <li>Compared performance by category, segment, and region.</li>
+            <li>Identified strong and weak profit patterns.</li>
+            <li>Practiced dashboard storytelling for business decision-making.</li>
+          </ul>
+          <div class="placeholder">Add Superstore Power BI dashboard screenshot here</div>
+        </div>
+
+        <div class="card">
+          <h3>World Cup Data Analysis</h3>
+          <div class="tools">Tools Used: Python, Pandas, Jupyter Notebook, Kaggle CSV</div>
+          <p>
+            Explored and cleaned World Cup data to understand tournament patterns, team performance, and historical trends.
+          </p>
+          <ul>
+            <li>Imported and explored CSV data.</li>
+            <li>Checked missing values and data types.</li>
+            <li>Prepared the dataset for analysis.</li>
+            <li>Created insights from historical football data.</li>
+          </ul>
+          <div class="placeholder">Add Jupyter Notebook or chart screenshot here</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <div class="container">
+      <h2>Resume</h2>
+      <div class="card">
+        <p>
+          My resume is available for opportunities related to data analytics, business analysis, reporting,
+          and dashboard development.
+        </p>
+        <a class="button" href="#" target="_blank">Download Resume</a>
+        <p style="font-size: 13px; color: #666666; margin-top: 12px;">
+          Replace this button link with your Google Drive resume link.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="card">
+          <div class="label">Email</div>
+          <div class="value">myroncas@gmail.com</div>
+        </div>
+        <div class="card">
+          <div class="label">Phone</div>
+          <div class="value">081 9692533</div>
+        </div>
+        <div class="card">
+          <div class="label">Location</div>
+          <div class="value">Rangsit, Pathum Thani</div>
+        </div>
+        <div class="card">
+          <div class="label">GitHub</div>
+          <div class="value">Paste your GitHub link here</div>
+        </div>
+        <div class="card">
+          <div class="label">LinkedIn</div>
+          <div class="value">Paste your LinkedIn link here</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Htet Wai Yan Oo · Data Analytics Portfolio
+  </footer>
+</body>
+</html>
