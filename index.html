@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Htet Wai Yan Oo | Data Analytics Portfolio</title>
+
   <style>
     :root {
       --primary: #1F4E79;
+      --primary-dark: #12344D;
       --text: #333333;
       --muted: #666666;
       --bg: #FFFFFF;
@@ -31,12 +34,6 @@
       margin: 0 auto;
     }
 
-    header {
-      background: linear-gradient(135deg, #1F4E79, #12344D);
-      color: white;
-      padding: 72px 0 64px;
-    }
-
     nav {
       background: white;
       border-bottom: 1px solid var(--line);
@@ -49,8 +46,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 0;
       gap: 24px;
+      padding: 14px 0;
     }
 
     .site-name {
@@ -76,6 +73,12 @@
       color: var(--primary);
     }
 
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 72px 0 64px;
+    }
+
     h1 {
       font-size: 48px;
       line-height: 1.05;
@@ -94,12 +97,14 @@
       max-width: 760px;
       margin: 0;
       color: #F6F8FA;
+      line-height: 1.45;
     }
 
     .hero-buttons {
       margin-top: 30px;
       display: flex;
       gap: 16px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -113,11 +118,11 @@
 
     .btn-primary {
       background: white;
-      color: #1F4E79;
+      color: var(--primary);
     }
 
     .btn-primary:hover {
-      background: #f3f4f6;
+      background: #F3F4F6;
     }
 
     .btn-secondary {
@@ -127,7 +132,7 @@
 
     .btn-secondary:hover {
       background: white;
-      color: #1F4E79;
+      color: var(--primary);
     }
 
     section {
@@ -158,13 +163,25 @@
       margin: 22px 0 8px;
     }
 
-    p, li {
+    p,
+    li {
       font-size: 15px;
       line-height: 1.45;
     }
 
     p {
       margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .section-intro {
+      max-width: 850px;
+      color: var(--muted);
+      margin-bottom: 24px;
     }
 
     .quick-grid,
@@ -217,26 +234,19 @@
       color: var(--text);
     }
 
+    .value a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .value a:hover {
+      text-decoration: underline;
+    }
+
     .tools {
       font-size: 14px;
       color: var(--muted);
       margin-bottom: 14px;
-    }
-
-    ul {
-      margin: 8px 0 0;
-      padding-left: 20px;
-    }
-
-    .placeholder {
-      border: 2px dashed #B8C7D6;
-      background: #FAFBFC;
-      border-radius: 12px;
-      padding: 26px;
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 14px;
-      text-align: center;
     }
 
     .project-image {
@@ -248,7 +258,7 @@
       border: 1px solid var(--line);
       box-shadow: 0 3px 10px rgba(31, 78, 121, 0.08);
     }
-    
+
     .button {
       display: inline-block;
       background: var(--primary);
@@ -261,8 +271,12 @@
       margin-top: 10px;
     }
 
+    .button:hover {
+      background: var(--primary-dark);
+    }
+
     footer {
-      background: #12344D;
+      background: var(--primary-dark);
       color: white;
       padding: 24px 0;
       font-size: 13px;
@@ -286,16 +300,24 @@
       h2 {
         font-size: 32px;
       }
+
       .skills-grid {
-    grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
+
 <body>
   <nav>
     <div class="container">
       <div class="site-name">Htet Wai Yan Oo</div>
+
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -309,14 +331,18 @@
   <header>
     <div class="container">
       <h1>Htet Wai Yan Oo</h1>
+
       <p class="subtitle">Computer Science Student | Aspiring Data Analyst</p>
+
       <p class="hero-text">
-        Final-year Computer Science student at Rangsit University with hands-on experience in SQL, Python, Excel and Power BI.
-        I enjoy transforming raw data into meaningful insights through data analysis, visualization, and dashboard development to support better business decisions.
+        Final-year Computer Science student at Rangsit University with hands-on experience in SQL, Python, Excel, and Power BI.
+        I enjoy transforming raw data into meaningful insights through data analysis, visualization, and dashboard development
+        to support better business decisions.
       </p>
+
       <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="Htet_Wai_Yan_Oo_CV.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="Htet_Wai_Yan_Oo_CV.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
       </div>
     </div>
   </header>
@@ -324,19 +350,23 @@
   <section>
     <div class="container">
       <h2>Quick Profile</h2>
+
       <div class="quick-grid">
         <div class="card">
           <div class="label">Education</div>
           <div class="value">Bachelor of Computer Science, Rangsit University</div>
         </div>
+
         <div class="card">
           <div class="label">Expected Graduation</div>
           <div class="value">2027</div>
         </div>
+
         <div class="card">
           <div class="label">Main Interests</div>
           <div class="value">Data Analytics, Business Analysis, Dashboard Development, Reporting</div>
         </div>
+
         <div class="card">
           <div class="label">Main Tools</div>
           <div class="value">Excel, SQL/MySQL, Python/Pandas, Power BI, Jupyter Notebook</div>
@@ -347,82 +377,91 @@
 
   <section id="about">
     <div class="container">
-    <h2>About</h2>
+      <h2>About</h2>
 
       <div class="card">
         <h3>About Me</h3>
+
         <p>
-          I am a final-year Computer Science student at Rangsit University, focusing on data analytics, business analysis, and dashboard development. I have hands-on experience using Excel, SQL/MySQL, Python/Pandas, Power BI, and Jupyter Notebook through academic and personal projects.
+          I am a final-year Computer Science student at Rangsit University, focusing on data analytics, business analysis,
+          and dashboard development. I have hands-on experience using Excel, SQL/MySQL, Python/Pandas, Power BI, and
+          Jupyter Notebook through academic and personal projects.
         </p>
 
         <p>
-          I enjoy working with data to identify trends, build visual reports, and communicate insights in a clear and practical way. I am currently improving my skills through projects involving sales analysis, dashboard creation, data cleaning, and business reporting.
+          I enjoy working with data to identify trends, build visual reports, and communicate insights in a clear and
+          practical way. I am currently improving my skills through projects involving sales analysis, dashboard creation,
+          data cleaning, and business reporting.
         </p>
 
         <p>
-          I am looking for internship opportunities where I can support data analysis, reporting, dashboard development, and business insight generation while learning from real-world data and experienced teams.
+          I am looking for internship opportunities where I can support data analysis, reporting, dashboard development,
+          and business insight generation while learning from real-world data and experienced teams.
         </p>
       </div>
     </div>
   </section>
 
   <section id="skills">
-  <div class="container">
-    <h2>Skills</h2>
+    <div class="container">
+      <h2>Skills</h2>
 
-    <div class="skills-grid">
-      <div class="card">
-        <h4>Data Analysis & Reporting</h4>
-        <p>Excel PivotTables, charts, dashboards, exploratory analysis, and business insight generation.</p>
-      </div>
+      <div class="skills-grid">
+        <div class="card">
+          <h4>Data Analysis & Reporting</h4>
+          <p>Excel PivotTables, charts, dashboards, exploratory analysis, and business insight generation.</p>
+        </div>
 
-      <div class="card">
-        <h4>SQL / MySQL</h4>
-        <p>Data querying, filtering, grouping, aggregation, and basic database analysis using MySQL.</p>
-      </div>
+        <div class="card">
+          <h4>SQL / MySQL</h4>
+          <p>Data querying, filtering, grouping, aggregation, and basic database analysis using MySQL.</p>
+        </div>
 
-      <div class="card">
-        <h4>Python / Pandas</h4>
-        <p>Data cleaning, missing-value checking, data type inspection, CSV analysis, and basic visualization.</p>
-      </div>
+        <div class="card">
+          <h4>Python / Pandas</h4>
+          <p>Data cleaning, missing-value checking, data type inspection, CSV analysis, and basic visualization.</p>
+        </div>
 
-      <div class="card">
-        <h4>Power BI</h4>
-        <p>Dashboard creation, interactive visuals, filters, KPI reporting, and business performance analysis.</p>
-      </div>
+        <div class="card">
+          <h4>Power BI</h4>
+          <p>Dashboard creation, interactive visuals, filters, KPI reporting, and business performance analysis.</p>
+        </div>
 
-      <div class="card">
-        <h4>Business Analysis</h4>
-        <p>Analyzing trends, comparing performance, summarizing findings, and presenting insights clearly.</p>
-      </div>
+        <div class="card">
+          <h4>Business Analysis</h4>
+          <p>Analyzing trends, comparing performance, summarizing findings, and presenting insights clearly.</p>
+        </div>
 
-      <div class="card">
-        <h4>Tools & Documentation</h4>
-        <p>Jupyter Notebook, GitHub, Microsoft Word, Canva, project organization, and portfolio presentation.</p>
+        <div class="card">
+          <h4>Tools & Documentation</h4>
+          <p>Jupyter Notebook, GitHub, Microsoft Word, Canva, project organization, and portfolio presentation.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="projects">
     <div class="container">
       <h2>Projects</h2>
 
       <p class="section-intro">
-        These projects show my experience in data cleaning, dashboard development, visualization, and business insight generation using Excel, SQL/MySQL, Python/Pandas, Jupyter Notebook, and Power BI.
+        These projects show my experience in data cleaning, dashboard development, visualization, and business insight
+        generation using Excel, SQL/MySQL, Python/Pandas, Jupyter Notebook, and Power BI.
       </p>
 
       <div class="project-grid">
-
         <div class="card project-card">
           <h3>Superstore Sales Dashboard</h3>
+
           <div class="tools">Tools Used: Power BI, Excel, Data Visualization</div>
 
           <p>
-            Built an interactive Power BI dashboard to analyze sales, profit, category, segment, and regional performance. This project helped me practice dashboard storytelling and business performance reporting.
+            Built an interactive Power BI dashboard to analyze sales, profit, category, segment, and regional performance.
+            This project helped me practice dashboard storytelling and business performance reporting.
           </p>
 
           <h4>What I Did</h4>
+
           <ul>
             <li>Created dashboard visuals to compare sales and profit performance.</li>
             <li>Used filters and interactive charts to explore category, segment, and regional data.</li>
@@ -430,19 +469,21 @@
             <li>Presented business-style insights through a clean dashboard layout.</li>
           </ul>
 
-          <img class="project-image" src="images/superstore-dashboard.png" alt="Superstore Sales Dashboard">
-
+          <img class="project-image" src="images/superstore-dashboard.png" alt="Superstore Sales Dashboard" />
         </div>
 
         <div class="card project-card">
           <h3>Coffee Shop Sales Analysis</h3>
+
           <div class="tools">Tools Used: Excel, MySQL, Python/Pandas, Jupyter Notebook</div>
 
           <p>
-            Analyzed coffee shop sales data to understand revenue trends, product performance, store location performance, and hourly sales patterns.
+            Analyzed coffee shop sales data to understand revenue trends, product performance, store location performance,
+            and hourly sales patterns.
           </p>
 
           <h4>What I Did</h4>
+
           <ul>
             <li>Cleaned and prepared sales data for analysis.</li>
             <li>Used MySQL queries to analyze revenue, product, location, and hourly sales patterns.</li>
@@ -451,28 +492,30 @@
             <li>Organized the project for GitHub portfolio presentation.</li>
           </ul>
 
-          <img class="project-image" src="images/coffee-shop-dashboard.png" alt="Coffee Shop Sales Analysis Dashboard">
+          <img class="project-image" src="images/coffee-shop-dashboard.png" alt="Coffee Shop Sales Analysis Dashboard" />
         </div>
 
         <div class="card project-card">
           <h3>World Cup Data Analysis</h3>
+
           <div class="tools">Tools Used: Python, Pandas, Jupyter Notebook, Kaggle CSV</div>
 
           <p>
-            Explored and cleaned a World Cup dataset to understand tournament patterns, team performance, and historical football trends.
+            Explored and cleaned a World Cup dataset to understand tournament patterns, team performance, and historical
+            football trends.
           </p>
 
           <h4>What I Did</h4>
+
           <ul>
             <li>Imported and explored CSV data using Python/Pandas.</li>
             <li>Checked missing values and data types.</li>
             <li>Prepared the dataset for analysis-ready exploration.</li>
             <li>Produced insights about tournament history and team performance.</li>
           </ul>
-          
-          <img class="project-image" src="images/world-cup-analysis.png" alt="World Cup Data Analysis Screenshot">
-        </div>
 
+          <img class="project-image" src="images/world-cup-analysis.png" alt="World Cup Data Analysis Screenshot" />
+        </div>
       </div>
     </div>
   </section>
@@ -480,14 +523,14 @@
   <section id="resume">
     <div class="container">
       <h2>Resume</h2>
+
       <div class="card">
         <p>
-          My resume is available for opportunities related to data analytics, business analysis, reporting,
-          and dashboard development.
+          My resume is available for opportunities related to data analytics, business analysis, reporting, and dashboard
+          development.
         </p>
+
         <a class="button" href="Htet_Wai_Yan_Oo_CV.pdf" target="_blank">My Resume</a>
-        <p style="font-size: 13px; color: #666666; margin-top: 12px;">
-        </p>
       </div>
     </div>
   </section>
@@ -495,26 +538,35 @@
   <section id="contact">
     <div class="container">
       <h2>Contact</h2>
+
       <div class="contact-grid">
         <div class="card">
           <div class="label">Email</div>
           <div class="value">myroncas@gmail.com</div>
         </div>
+
         <div class="card">
           <div class="label">Phone</div>
           <div class="value">081 9692533</div>
         </div>
+
         <div class="card">
           <div class="label">Location</div>
           <div class="value">Rangsit, Pathum Thani</div>
         </div>
+
         <div class="card">
           <div class="label">GitHub</div>
-          <div class="value"><a href="https://github.com/myroniwyt" target="_blank">github.com/myroniwyt</a></div>
+          <div class="value">
+            <a href="https://github.com/myroniwyt" target="_blank">github.com/myroniwyt</a>
+          </div>
         </div>
+
         <div class="card">
           <div class="label">LinkedIn</div>
-          <div class="value"><a href="https://www.linkedin.com/in/htet-wai-yan-oo-70b7593b3/" target="_blank">My LinkedIn Profile</a></div>
+          <div class="value">
+            <a href="https://www.linkedin.com/in/htet-wai-yan-oo-70b7593b3/" target="_blank">My LinkedIn Profile</a>
+          </div>
         </div>
       </div>
     </div>
